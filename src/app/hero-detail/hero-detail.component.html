@@ -1,0 +1,13 @@
+<!--selectedHero의 값이 존재할 경우에만 상세화면을 보여줌. -->
+<!--selectedHero의 값이 undefined이면 ngIf는 상세정보 표시 부분을 DOM에서 제거한다.-->
+<div *ngIf="hero">
+  <!-- 파이프라인으로 selectedHero.name을 대문자로 출력-->
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+  </div>
+  <button (click)="goBack()">back</button>
+  <button (click)="save()">save</button>
+</div>
